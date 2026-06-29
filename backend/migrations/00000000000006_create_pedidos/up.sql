@@ -1,0 +1,7 @@
+CREATE TABLE pedidos (
+    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    usuario_id INTEGER NOT NULL REFERENCES usuarios(id),
+    valor_total REAL NOT NULL,
+    status TEXT NOT NULL DEFAULT 'pendente',
+    criado_em TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);

@@ -1,0 +1,44 @@
+[package]
+name = "shopping-cart-backend"
+version = "0.1.0"
+edition = "2021"
+authors = ["Shopping Cart Team"]
+description = "Backend do sistema de Carrinho de Compras em Rust"
+
+[dependencies]
+# Web Framework
+rocket = { version = "0.5.1", features = ["json"] }
+
+# ORM e Banco de Dados
+diesel = { version = "2.2", features = ["sqlite", "r2d2", "chrono"] }
+diesel_migrations = "2.2"
+libsqlite3-sys = { version = "0.30", features = ["bundled"] }
+
+# Serialização/Deserialização
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# Autenticação
+jsonwebtoken = { version = "10", features = ["rust_crypto"] }
+argon2 = "0.5"
+
+# Async Runtime
+tokio = { version = "1", features = ["full"] }
+
+# Configuração
+dotenvy = "0.15"
+
+# Data/Hora
+chrono = { version = "0.4", features = ["serde"] }
+
+# Logs
+log = "0.4"
+env_logger = "0.11"
+
+# CORS
+rocket_cors = "0.6"
+
+# Validação
+validator = { version = "0.18", features = ["derive"] }
+
+[dev-dependencies]
